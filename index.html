@@ -1,0 +1,846 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    var jsonData = {
+                "resources": {
+                    "WACN 1": {
+                        "id": 1,
+                        "wacnId": "000001",
+                        "alias": "GW$00001",
+                        "links": [{
+                                "relationship": "self",
+                                "href": "/wacns/000001"
+                            }, {
+                                "relationship": "parent",
+                                "href": ""
+                            }
+                        ],
+                        "systems": {
+                            "system 1":{
+                                "id": 1,
+                                "wacnId": "000001",
+                                "systemId": "FADE1",
+                                "alias": "GW$FADE1",
+                                "links": [{
+                                        "relationship": "self",
+                                        "href": "/wacns/000001/systems/FADE1"
+                                    }, {
+                                        "relationship": "parent",
+                                        "href": "/wacns/000001"
+                                    }
+                                ],
+                                "zones":{
+                                    "zone 1":{
+                                        "id": 1,
+                                        "wacnId": "000001",
+                                        "systemId": "FADE1",
+                                        "zoneId": 1,
+                                        "alias": "Zone 1",
+                                        "links": [{
+                                                "relationship": "self",
+                                                "href": "/wacns/00001/systems/FADE1/zones/1"
+                                            }, {
+                                                "relationship": "parent",
+                                                "href": "/wacns/000001/systems/FADE1"
+                                            }
+                                        ],
+                                        "sites":{
+                                            "site 1":{
+                                                "id": 1,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE1",
+                                                "zoneId": 1,
+                                                "siteId": 1,
+                                                "alias": "Site 1",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE1/zones/1/sites/1"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE1/zones/1"
+                                                    }
+                                                ]
+
+                                            },
+                                            "site 2":{
+                                                "id": 2,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE1",
+                                                "zoneId": 1,
+                                                "siteId": 2,
+                                                "alias": "Site 2",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE1/zones/1/sites/2"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE1/zones/1"
+                                                    }
+                                                ]
+
+                                            }
+                                        }
+                                    },
+                                    "zone 2": {
+                                        "id": 2,
+                                        "wacnId": "000001",
+                                        "systemId": "FADE1",
+                                        "zoneId": 2,
+                                        "alias": "Zone 2",
+                                        "links": [{
+                                                "relationship": "self",
+                                                "href": "/wacns/00001/systems/FADE1/zones/2"
+                                            }, {
+                                                "relationship": "parent",
+                                                "href": "/wacns/000001/systems/FADE1"
+                                            }
+                                        ],
+                                        "sites":{
+                                            "site 3":{
+                                                "id": 3,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE1",
+                                                "zoneId": 2,
+                                                "siteId": 3,
+                                                "alias": "Site 3",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE1/zones/2/sites/3"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE1/zones/2"
+                                                    }
+                                                ]
+
+                                            },
+                                            "site 24":{
+                                                "id": 24,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE1",
+                                                "zoneId": 2,
+                                                "siteId": 24,
+                                                "alias": "Site 24",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE1/zones/2/sites/24"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE1/zones/2"
+                                                    }
+                                                ]
+
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "system 2":{
+                                "id": 2,
+                                "wacnId": "000001",
+                                "systemId": "FADE2",
+                                "alias": "GW$FADE2",
+                                "links": [{
+                                        "relationship": "self",
+                                        "href": "/wacns/000001/systems/FADE2"
+                                    }, {
+                                        "relationship": "parent",
+                                        "href": "/wacns/000001"
+                                    }
+                                ],
+                                "zones":{
+                                    "zone 3":{
+                                        "id": 3,
+                                        "wacnId": "000001",
+                                        "systemId": "FADE2",
+                                        "zoneId": 3,
+                                        "alias": "Zone 3",
+                                        "links": [{
+                                                "relationship": "self",
+                                                "href": "/wacns/000001/systems/FADE2/zones/3"
+                                            }, {
+                                                "relationship": "parent",
+                                                "href": "/wacns/000001/systems/FADE2"
+                                            }
+                                        ],
+                                        "sites":{
+                                            "site 4":{
+                                                "id": 4,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE2",
+                                                "zoneId": 3,
+                                                "siteId": 4,
+                                                "alias": "Site 4",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE2/zones/3/sites/4"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE2/zones/3"
+                                                    }
+                                                ]
+
+                                            },
+                                            "site 23":{
+                                                "id": 23,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE2",
+                                                "zoneId": 3,
+                                                "siteId": 23,
+                                                "alias": "Site 23",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE2/zones/3/sites/23"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE2/zones/3"
+                                                    }
+                                                ]
+
+                                            }
+                                        }
+                                    },
+                                    "zone 12": {
+                                        "id": 12,
+                                        "wacnId": "000001",
+                                        "systemId": "FADE2",
+                                        "zoneId": 12,
+                                        "alias": "Zone 12",
+                                        "links": [{
+                                                "relationship": "self",
+                                                "href": "/wacns/00001/systems/FADE2/zones/12"
+                                            }, {
+                                                "relationship": "parent",
+                                                "href": "/wacns/000001/systems/FADE2"
+                                            }
+                                        ],
+                                        "sites":{
+                                            "site 14":{
+                                                "id": 14,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE2",
+                                                "zoneId": 12,
+                                                "siteId": 14,
+                                                "alias": "Site 14",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE2/zones/12/sites/14"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE2/zones/12"
+                                                    }
+                                                ]
+
+                                            },
+                                            "site 22":{
+                                                "id": 22,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE2",
+                                                "zoneId": 12,
+                                                "siteId": 22,
+                                                "alias": "Site 22",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE2/zones/12/sites/22"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE2/zones/12"
+                                                    }
+                                                ]
+
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "system 5":{
+                                "id": 5,
+                                "wacnId": "000001",
+                                "systemId": "FADE5",
+                                "alias": "GW$FADE5",
+                                "links": [{
+                                        "relationship": "self",
+                                        "href": "/wacns/000001/systems/FADE5"
+                                    }, {
+                                        "relationship": "parent",
+                                        "href": "/wacns/000001"
+                                    }
+                                ],
+                                "zones":{
+                                    "zone 7":{
+                                        "id": 7,
+                                        "wacnId": "000001",
+                                        "systemId": "FADE5",
+                                        "zoneId": 7,
+                                        "alias": "Zone 7",
+                                        "links": [{
+                                                "relationship": "self",
+                                                "href": "/wacns/00001/systems/FADE5/zones/7"
+                                            }, {
+                                                "relationship": "parent",
+                                                "href": "/wacns/000001/systems/FADE5"
+                                            }
+                                        ],
+                                        "sites":{
+                                            "site 8":{
+                                                "id": 8,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE5",
+                                                "zoneId": 7,
+                                                "siteId": 8,
+                                                "alias": "Site 8",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE5/zones/7/sites/8"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE5/zones/7"
+                                                    }
+                                                ]
+
+                                            },
+                                            "site 9":{
+                                                "id": 9,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE5",
+                                                "zoneId": 7,
+                                                "siteId": 9,
+                                                "alias": "Site 9",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE5/zones/7/sites/9"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE5/zones/7"
+                                                    }
+                                                ]
+
+                                            }
+                                        }
+                                    },
+                                    "zone 8": {
+                                        "id": 8,
+                                        "wacnId": "000001",
+                                        "systemId": "FADE5",
+                                        "zoneId": 8,
+                                        "alias": "Zone 8",
+                                        "links": [{
+                                                "relationship": "self",
+                                                "href": "/wacns/00001/systems/FADE5/zones/8"
+                                            }, {
+                                                "relationship": "parent",
+                                                "href": "/wacns/000001/systems/FADE5"
+                                            }
+                                        ],
+                                        "sites":{
+                                            "site 10":{
+                                                "id": 10,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE5",
+                                                "zoneId": 8,
+                                                "siteId": 10,
+                                                "alias": "Site 10",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE5/zones/8/sites/10"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE5/zones/8"
+                                                    }
+                                                ]
+
+                                            },
+                                            "site 21":{
+                                                "id": 21,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE5",
+                                                "zoneId": 8,
+                                                "siteId": 21,
+                                                "alias": "Site 21",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE5/zones/8/sites/21"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE5/zones/8"
+                                                    }
+                                                ]
+
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "system 6":{
+                                "id": 6,
+                                "wacnId": "000001",
+                                "systemId": "FADE6",
+                                "alias": "GW$FADE6",
+                                "links": [{
+                                        "relationship": "self",
+                                        "href": "/wacns/000001/systems/FADE6"
+                                    }, {
+                                        "relationship": "parent",
+                                        "href": "/wacns/000001"
+                                    }
+                                ],
+                                "zones":{
+                                    "zone 9":{
+                                        "id": 9,
+                                        "wacnId": "000001",
+                                        "systemId": "FADE6",
+                                        "zoneId": 9,
+                                        "alias": "Zone 9",
+                                        "links": [{
+                                                "relationship": "self",
+                                                "href": "/wacns/00001/systems/FADE6/zones/9"
+                                            }, {
+                                                "relationship": "parent",
+                                                "href": "/wacns/000001/systems/FADE6"
+                                            }
+                                        ],
+                                        "sites":{
+                                            "site 11":{
+                                                "id": 11,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE6",
+                                                "zoneId": 9,
+                                                "siteId": 11,
+                                                "alias": "Site 11",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE6/zones/9/sites/11"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE6/zones/9"
+                                                    }
+                                                ]
+
+                                            },
+                                            "site 12":{
+                                                "id": 12,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE6",
+                                                "zoneId": 10,
+                                                "siteId": 12,
+                                                "alias": "Site 12",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE6/zones/10/sites/12"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE6/zones/10"
+                                                    }
+                                                ]
+
+                                            }
+                                        }
+                                    },
+                                    "zone 11": {
+                                        "id": 11,
+                                        "wacnId": "000001",
+                                        "systemId": "FADE6",
+                                        "zoneId": 11,
+                                        "alias": "Zone 11",
+                                        "links": [{
+                                                "relationship": "self",
+                                                "href": "/wacns/00001/systems/FADE6/zones/11"
+                                            }, {
+                                                "relationship": "parent",
+                                                "href": "/wacns/000001/systems/FADE6"
+                                            }
+                                        ],
+                                        "sites":{
+                                            "site 13":{
+                                                "id": 13,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE6",
+                                                "zoneId": 11,
+                                                "siteId": 13,
+                                                "alias": "Site 13",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE6/zones/11/sites/13"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE6/zones/11"
+                                                    }
+                                                ]
+
+                                            },
+                                            "site 20":{
+                                                "id": 20,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE6",
+                                                "zoneId": 11,
+                                                "siteId": 20,
+                                                "alias": "Site 20",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE6/zones/11/sites/20"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE6/zones/11"
+                                                    }
+                                                ]
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    },
+                    "WACN 2": {
+                        "id": 2,
+                        "wacnId": "000002",
+                        "alias": "GW$00002",
+                        "links": [{
+                                "relationship": "self",
+                                "href": "/wacns/00002"
+                            }, {
+                                "relationship": "parent",
+                                "href": ""
+                            }
+                        ],
+                        "systems": {
+                            "system 3":{
+                                "id": 3,
+                                "wacnId": "000002",
+                                "systemId": "FADE3",
+                                "alias": "GW$FADE3",
+                                "links": [{
+                                        "relationship": "self",
+                                        "href": "/wacns/000002/systems/FADE3"
+                                    }, {
+                                        "relationship": "parent",
+                                        "href": "/wacns/000002"
+                                    }
+                                ],
+                                "zones":{
+                                    "zone 4":{
+                                        "id": 4,
+                                        "wacnId": "000002",
+                                        "systemId": "FADE3",
+                                        "zoneId": 4,
+                                        "alias": "Zone 4",
+                                        "links": [{
+                                                "relationship": "self",
+                                                "href": "/wacns/000002/systems/FADE3/zones/4"
+                                            }, {
+                                                "relationship": "parent",
+                                                "href": "/wacns/000002/systems/FADE3"
+                                            }
+                                        ],
+                                        "sites":{
+                                            "site 5":{
+                                                "id": 5,
+                                                "wacnId": "000002",
+                                                "systemId": "FADE3",
+                                                "zoneId": 4,
+                                                "siteId": 5,
+                                                "alias": "Site 5",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000002/systems/FADE3/zones/4/sites/5"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000002/systems/FADE3/zones/4"
+                                                    }
+                                                ]
+
+                                            },
+                                            "site 19":{
+                                                "id": 19,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE3",
+                                                "zoneId": 4,
+                                                "siteId": 19,
+                                                "alias": "Site 19",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE3/zones/4/sites/19"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE3/zones/4"
+                                                    }
+                                                ]
+
+                                            }
+                                        }
+                                    },
+                                    "zone 13": {
+                                        "id": 13,
+                                        "wacnId": "000001",
+                                        "systemId": "FADE3",
+                                        "zoneId": 13,
+                                        "alias": "Zone 13",
+                                        "links": [{
+                                                "relationship": "self",
+                                                "href": "/wacns/00001/systems/FADE3/zones/13"
+                                            }, {
+                                                "relationship": "parent",
+                                                "href": "/wacns/000001/systems/FADE3"
+                                            }
+                                        ],
+                                        "sites":{
+                                            "site 15":{
+                                                "id": 15,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE3",
+                                                "zoneId": 13,
+                                                "siteId": 15,
+                                                "alias": "Site 15",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE3/zones/13/sites/15"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE3/zones/13"
+                                                    }
+                                                ]
+
+                                            },
+                                            "site 16":{
+                                                "id": 16,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE3",
+                                                "zoneId": 13,
+                                                "siteId": 16,
+                                                "alias": "Site 16",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE3/zones/13/sites/16"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE3/zones/13"
+                                                    }
+                                                ]
+
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "system 4":{
+                                "id": 4,
+                                "wacnId": "000002",
+                                "systemId": "FADE4",
+                                "alias": "GW$FADE4",
+                                "links": [{
+                                        "relationship": "self",
+                                        "href": "/wacns/000002/systems/FADE4"
+                                    }, {
+                                        "relationship": "parent",
+                                        "href": "/wacns/000002"
+                                    }
+                                ],
+                                "zones":{
+                                    "zone 5":{
+                                        "id": 5,
+                                        "wacnId": "000002",
+                                        "systemId": "FADE4",
+                                        "zoneId": 5,
+                                        "alias": "Zone 5",
+                                        "links": [{
+                                                "relationship": "self",
+                                                "href": "/wacns/000002/systems/FADE4/zones/5"
+                                            }, {
+                                                "relationship": "parent",
+                                                "href": "/wacns/000002/systems/FADE4"
+                                            }
+                                        ],
+                                        "sites":{
+                                            "site 6":{
+                                                "id": 6,
+                                                "wacnId": "000002",
+                                                "systemId": "FADE4",
+                                                "zoneId": 5,
+                                                "siteId": 6,
+                                                "alias": "Site 6",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000002/systems/FADE4/zones/5/sites/6"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000002/systems/FADE4/zones/5"
+                                                    }
+                                                ]
+
+                                            },
+                                            "site 17":{
+                                                "id": 17,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE4",
+                                                "zoneId": 5,
+                                                "siteId": 17,
+                                                "alias": "Site 17",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE4/zones/5/sites/17"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE4/zones/5"
+                                                    }
+                                                ]
+
+                                            }
+                                        }
+                                    },
+                                    "zone 6":{
+                                        "id": 6,
+                                        "wacnId": "000002",
+                                        "systemId": "FADE4",
+                                        "zoneId": 6,
+                                        "alias": "Zone 6",
+                                        "links": [{
+                                                "relationship": "self",
+                                                "href": "/wacns/000002/systems/FADE4/zones/6"
+                                            }, {
+                                                "relationship": "parent",
+                                                "href": "/wacns/000002/systems/FADE4"
+                                            }
+                                        ],
+                                        "sites":{
+                                            "site 7":{
+                                                "id": 7,
+                                                "wacnId": "000002",
+                                                "systemId": "FADE4",
+                                                "zoneId": 6,
+                                                "siteId": 7,
+                                                "alias": "Site 7",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000002/systems/FADE4/zones/6/sites/7"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000002/systems/FADE4/zones/6"
+                                                    }
+                                                ]
+
+                                            },
+                                            "site 18":{
+                                                "id": 18,
+                                                "wacnId": "000001",
+                                                "systemId": "FADE4",
+                                                "zoneId": 6,
+                                                "siteId": 18,
+                                                "alias": "Site 18",
+                                                "links": [{
+                                                        "relationship": "self",
+                                                        "href": "/wacns/000001/systems/FADE4/zones/6/sites/18"
+                                                    }, {
+                                                        "relationship": "parent",
+                                                        "href": "/wacns/000001/systems/FADE4/zones/6"
+                                                    }
+                                                ]
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Resources</h2>
+            <hr>
+            <button id="getResources" type="button" class="btn btn-secondary" >
+                Get Resources
+            </button>
+            <p>Click to expand</p>
+            <ul id="resourceContainer">
+        
+            </ul>
+        </div>
+        <div class="col">
+            <h2>Employees</h2>
+            <hr>
+            <button id="getEmployees" type="button" class="btn btn-secondary">
+                Get Employees
+            </button>
+            <table id="employeesList" style="display:none;" class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable">
+            </tbody>
+            </table>
+        </div>
+      </div>
+</div>
+
+<script>
+    $(document).ready(function() { 
+        var resourcesDisplayed = false;
+        var employeesDisplayed = false;
+
+        function toggleChildUL(event) {
+            $(event.target).find( "ul" ).toggle();
+        }
+
+
+        function getEmployees () {
+            if(!employeesDisplayed){
+                $("#employeesList").show();
+                var settings = {
+                "url": "http://dummy.restapiexample.com/api/v1/employees",
+                "method": "GET",
+                "timeout": 0
+                }; 
+                console.log(settings);
+
+                $.ajax(settings)
+                .done(function (response) {
+                    console.log(response);
+                    response.data.forEach(function (item) {
+                        console.log(item); // key
+                        $( "#employeeTable" ).append("<tr><td>" + item.id + "</td><td>" + item.employee_name + "</td><td>" + item.employee_age + "</td></tr>");
+                    });
+                    
+                }).fail(function(response) {
+                    console.log( "error" );
+                    console.log(response);
+                })
+                employeesDisplayed = true;
+            }
+            
+        }
+
+        function displayResources (event) {
+            if(!resourcesDisplayed){
+                for (wacnObj in event.data.resources) {
+                    $("#resourceContainer").append("<li>WACN "+event.data.resources[wacnObj].alias+" FQID="+event.data.resources[wacnObj].wacnId+"<ul style='display:none;' id='wacn"+event.data.resources[wacnObj].id+"'></ul></li>");
+                    for (sysObj in event.data.resources[wacnObj].systems) {
+                        $("#wacn"+event.data.resources[wacnObj].id).append("<li>SYSTEM "+event.data.resources[wacnObj].systems[sysObj].alias+" FQID=" + event.data.resources[wacnObj].wacnId + ":" + event.data.resources[wacnObj].systems[sysObj].systemId + "<ul style='display:none;' id='sys"+event.data.resources[wacnObj].systems[sysObj].id+"'></ul></li>");
+                        for (zoneObj in event.data.resources[wacnObj].systems[sysObj].zones) { 
+                            $("#sys"+event.data.resources[wacnObj].systems[sysObj].id).append("<li>"+event.data.resources[wacnObj].systems[sysObj].zones[zoneObj].alias+" FQID=" + event.data.resources[wacnObj].wacnId + ":" + event.data.resources[wacnObj].systems[sysObj].systemId + ":" + event.data.resources[wacnObj].systems[sysObj].zones[zoneObj].zoneId + "<ul style='display:none;' id='zone"+event.data.resources[wacnObj].systems[sysObj].zones[zoneObj].id+"'></ul></li>");
+                            for (siteObj in event.data.resources[wacnObj].systems[sysObj].zones[zoneObj].sites) {
+                                $("#zone"+event.data.resources[wacnObj].systems[sysObj].zones[zoneObj].id).append("<li>"+event.data.resources[wacnObj].systems[sysObj].zones[zoneObj].sites[siteObj].alias+" FQID="+ event.data.resources[wacnObj].wacnId + ":" + event.data.resources[wacnObj].systems[sysObj].systemId + ":" + event.data.resources[wacnObj].systems[sysObj].zones[zoneObj].zoneId + ":" + event.data.resources[wacnObj].systems[sysObj].zones[zoneObj].sites[siteObj].siteId + "</li>");
+                            }
+                        }                        
+                    }                    
+                }
+                //once all ul's are loaded, assign click handler
+                $("li").click(toggleChildUL);
+                resourcesDisplayed = true;
+            }
+        }
+        
+        $( "#getEmployees" ).click(getEmployees);
+        $( "#getResources" ).click(jsonData, displayResources);
+    }); 
+</script>
